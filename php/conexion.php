@@ -32,12 +32,15 @@ class bd{
 	* la división de dos numeros 
  	* @param $conex almacena la conexion a la base de datos 
  	*/
-	function conectar(){
-		if (!($conex=@mysql_connect($this->servidor,$this->usuario,$this->contrasena))) {
+	function conectar()
+	{
+		if (!($conex=@mysql_connect($this->servidor,$this->usuario,$this->contrasena))) 
+		{
 			echo"<h1> [:(] Error al conectar a la base de datos</h1>";	
 			exit();
 		}
-		if (!@mysql_select_db($this->baseDatos,$conex)){
+		if (!@mysql_select_db($this->baseDatos,$conex))
+		{
 			echo "<h1> [:(] Error al seleccionar la base de datos</h1>";  
 			exit();
 		}

@@ -1,13 +1,3 @@
-<?php
-require_once("general.class.php");  
-$objeto = new Seleccion;
-$objeto2 = new Seleccion;
-$paises=$objeto2->verPaises();
-$terapeutas=$objeto->verTerapeutas();  
-
-ob_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,35 +19,11 @@ ob_start();
     <![endif]-->
 </head>
   <body>
-  <page>
     <div class="container">
-      <div class="page-header">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="../img/logo.jpg" alt="Logo del la empresa" height="100" width="200">
-          </div>
-          <div class="col-md-6">
-          <h2 id="titulo">Exoneración de Responsabilidad</h2>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-      <label for="">
-        Por favor, dedique unos minutos a leer cuidadosamente la inormación siguiente y suscribirlacon su fuirma al finalizar la
-        lectura, muchas gracias</label>
-      </div>
-      <div class="form-group">
-        <label for="">1. El masaje o tratamiento que usted va a recibir tiene el próposito básico derelajación
-        y el alivio de ka tensión muscular seperficial.</label>
-        <label for="">2. Si usted está insatisfecho con el servicio, o experimenta cualquier tipo de molestia o 
-        dolor durante la    sesión, informe por favor al terapeuta cuanto antes.</label>
-        <label for="">3. Si no se menciona nada durante la sesión, asumiremos que no ha habido ningún problema.</label>
-        <label for="">4. Cualquier insinuación, hecho o propuesta de caracter sexual ocasionara el fiinmediato de la 
-        sesión y él/la huésped sera obligado al pago completo del servicio.</label>
-        <label for="">5. Por la seguridad de sus valores, le sugerimos dejarlos en la caja fuerte dehabitación.
-        Renova spa no asumirá ninguna responsabilidad por robo o extravío de valores. </label>
-        <label for="">6. Le agradecemos su comprensión y esperamos que disfrute de nuestros servicios.</label>
-      </div>
+    <div class="page-header">
+      <br>
+      <br>
+    </div>
       <form action="crearUsuario.php" method="post">
         <div class="row">
           <div class="col-md-6">
@@ -200,40 +166,9 @@ ob_start();
               </div>
             </div>
           </div>
-          <label for="">Por favor, regalenos su opinion acerca de la sesion que acaba de tomar:</label>
-              <textarea class="form-control" name="opinion"> </textarea>
-              <br>
-              <br>
-          <div class="row">
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
-              <img src="../img/firma.jpg" alt="">
-            </div>
-            <div class="col-md-4">
-
-            </div>
-          </div>
-  </page>
-  <?php
-  /*
-  $contenido = ob_get_clean();
-  require_once('../html2pdf-4.5.1/html2pdf.class.php');
-  $pdf = new html2pdf('P','A4', 'fr', 'UTF-8');
-  $pdf->writeHTML($contenido);
-  $pdf->pdf->IncludeJS('print(TRUE)');
-  $pdf->output('exoneracion.pdf');*/
-  ?>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick='window.print();'>Registrar</button> 
-        </div>
-      </form>
-    </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+          <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+      </div>
   </body>
 </html>
+    

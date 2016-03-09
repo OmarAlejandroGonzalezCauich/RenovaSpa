@@ -40,6 +40,18 @@
 			  </div>
 			</div>
       <div class="form-group">
+        <div class="row">
+        <div class="col-md-4">
+          <!--<a href="terapeutas.php"><label for="" id="terapeutas">Terapeutas</label></a>-->
+        </div>
+        <div class="col-md-4">
+          <a href="clientes.php"><label for="" id="clientes">Clientes</label></a>
+        </div>
+        <div class="col-md-4">
+          <!--<a href="tratamientos.php"><label for="" id="opiniones">Tratamientos</label></a> -->
+        </div>
+      </div>
+      <div class="form-group">
 			<div id="tablas">
 				
 			</div>

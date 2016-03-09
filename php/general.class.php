@@ -8,12 +8,14 @@ include_once("conexion.php");
 */ 
 
 class Seleccion
+
 {	
 	var $con;
 	/**
 	 * @param Seleccion() es el constructor de la clase Seleccion del archivo conexionClase.php
 	 */
-	function Seleccion(){
+	function Seleccion()
+	{
 		$this->con = new bd;
 	 }
 	 /**
@@ -21,8 +23,10 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function sesionUsuario($usuario,$password){	 			
-	    if ($this->con->conectar()==true){
+	 function sesionUsuario($usuario,$password)
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
 	 	    
 	 	    $sql="SELECT password, email FROM superusuario WHERE email ='".$usuario."' AND password='".$password."'";
 	 		return $select=mysql_query($sql);
@@ -33,9 +37,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function sesionRecepcionista($usuario,$password){	 			
+	 function sesionRecepcionista($usuario,$password)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="SELECT password, email FROM recepcionista WHERE email ='".$usuario."' AND password='".$password."'";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -45,8 +51,10 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function altaCliente($usuario,$apellidos,$edad,$habitacion,$email,$pais,$idioma,$hotel,$fecha,$agencia,$tratamiento,$terapeuta,$circunstancia,$opinion){	 			
-	    if ($this->con->conectar()==true){
+	 function altaCliente($usuario,$apellidos,$edad,$habitacion,$email,$pais,$idioma,$hotel,$fecha,$agencia,$tratamiento,$terapeuta,$circunstancia,$opinion)
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
 	 	    
 	 	    $sql="INSERT INTO clientes(pais_id,idioma_id,hotel_id,agencia_id,tratamiento_id,	terapeuta_id,circustancias_medica_id,fecha_alta,nombre,apellidos,edad,correo_electronico,habitacion,opinion) 
 	 	    VALUES ('".$pais."', '".$idioma."', '".$hotel."', '".$agencia."', '".$tratamiento."', '".$terapeuta."','".$circunstancia."', '".$fecha."', '".$usuario."', '".$apellidos."', '".$edad."','".$email."', '".$habitacion."', '".$opinion."')";
@@ -58,9 +66,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function verPaises(){	 			
+	 function verPaises()
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	   
 	 	    $sql="SELECT * FROM paises";
 	 		return $select=mysql_query($sql);
@@ -71,8 +81,10 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function verTerapeutas(){	 			
-	    if ($this->con->conectar()==true){
+	 function verTerapeutas()
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
 	 	   
 	 	    $sql="SELECT * FROM terapeutas";
 	 		return $select=mysql_query($sql);
@@ -84,8 +96,10 @@ class Seleccion
 	 * @return regresa el script.
 	 */
 	 function buscarTerapeuta($email)
+	 
 	 {	 			
 	    if ($this->con->conectar()==true)
+	    
 	    {
 	 	    $sql="SELECT email FROM terapeutas WHERE email='".$email."'";
 	 		return $select=mysql_query($sql);
@@ -97,8 +111,10 @@ class Seleccion
 	 * @return regresa el script.
 	 */
 	 function buscarIdTerapeuta($id)
+	 
 	 {	 			
 	    if ($this->con->conectar()==true)
+	    
 	    {
 	 	    $sql="SELECT id FROM terapeutas WHERE id='".$id."'";
 	 		return $select=mysql_query($sql);
@@ -110,8 +126,10 @@ class Seleccion
 	 * @return regresa el script.
 	 */
 	  function crearTerapeuta($nombre,$apellidos,$telefono,$sexo,$email)
+	 
 	 {	 			
 	    if ($this->con->conectar()==true)
+	    
 	    {
 	 	    $sql="INSERT INTO terapeutas(nombre,apellidos,sexo,telefono,email) 
 	 	    VALUES ('".$nombre."', '".$apellidos."', '".$sexo."', '".$telefono."', '".$email."')";
@@ -124,8 +142,10 @@ class Seleccion
 	 * @return regresa el script.
 	 */
 	 function eliminarTerapeuta($id)
+	 
 	 {	 			
 	    if ($this->con->conectar()==true)
+	    
 	    {
 	 	    $sql="DELETE FROM terapeutas WHERE id='".$id."'";
 	 		return $select=mysql_query($sql);
@@ -136,8 +156,10 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function verCMedicas(){	 			
-	    if ($this->con->conectar()==true){
+	 function verCMedicas()
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
 	 	    
 	 	    $sql="SELECT * FROM circustancias_medicas";
 	 		return $select=mysql_query($sql);
@@ -148,9 +170,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function buscarCMedicas($cMedica){	 			
+	 function buscarCMedicas($cMedica)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="SELECT nombre FROM circustancias_medicas WHERE nombre='".$cMedica."'";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -160,9 +184,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function crearCMedica($nombre){	 			
+	 function crearCMedica($nombre)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="INSERT INTO circustancias_medicas(nombre) 
 	 	    VALUES ('".$nombre."')";
 	 		return $select=mysql_query($sql);
@@ -173,9 +199,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function buscarIdCMedica($id){	 			
+	 function buscarIdCMedica($id)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="SELECT id FROM circustancias_medicas WHERE id='".$id."'";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -185,9 +213,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function eliminarIdCMedica($id){	 			
+	 function eliminarIdCMedica($id)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="DELETE FROM circustancias_medicas WHERE id='".$id."'";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -197,9 +227,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function verTratamientos(){	 			
+	 function verTratamientos()
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="SELECT * FROM tratamientos";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -209,9 +241,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function buscarTratamiento($nombre){	 			
+	 function buscarTratamiento($nombre)
+	 {	 			
 	   
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="SELECT nombre FROM tratamientos WHERE nombre='".$nombre."'";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -221,9 +255,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function crearTratamiento($nombre){	 			
+	 function crearTratamiento($nombre)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="INSERT INTO tratamientos(nombre) 
 	 	    VALUES ('".$nombre."')";
 	 		return $select=mysql_query($sql);
@@ -234,9 +270,11 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function buscarIdTratamiento($id){	 			
+	 function buscarIdTratamiento($id)
+	 {	 			
 	    
-	    if ($this->con->conectar()==true){
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="SELECT id FROM tratamientos WHERE id='".$id."'";
 	 		return $select=mysql_query($sql);
 	 	}
@@ -246,9 +284,51 @@ class Seleccion
 	 * @param $sql encargada de almacenar el script sql 
 	 * @return regresa el script.
 	 */
-	 function eliminarIdTratamiento($id){	 			
-	    if ($this->con->conectar()==true){
+	 function eliminarIdTratamiento($id)
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
 	 	    $sql="DELETE FROM tratamientos WHERE id='".$id."'";
+	 		return $select=mysql_query($sql);
+	 	}
+	 }
+	 /**
+	 * @param eliminarIdTratamiento($id) selecciona la columna id de la tabla tratamientos y elimina el id 	que se mande
+	 * @param $sql encargada de almacenar el script sql 
+	 * @return regresa el script.
+	 */
+	 function verClientes()
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
+	 	    $sql="SELECT * FROM clientes";
+	 		return $select=mysql_query($sql);
+	 	}
+	 }
+	 /**
+	 * @param buscarIdClientes($id) selecciona la columna id de la tabla Clientes
+	 * @param $sql encargada de almacenar el script sql 
+	 * @return regresa el script.
+	 */
+	 function buscarIdClientes($id)
+	 {	 			
+	    
+	    if ($this->con->conectar()==true)
+	    {
+	 	    $sql="SELECT id FROM clientes WHERE id='".$id."'";
+	 		return $select=mysql_query($sql);
+	 	}
+	 }
+	 /**
+	 * @param eliminarIdcliente($id) selecciona la columna id de la tabla tratamientos y elimina el id 	que se mande
+	 * @param $sql encargada de almacenar el script sql 
+	 * @return regresa el script.
+	 */
+	 function eliminarIdcliente($id)
+	 {	 			
+	    if ($this->con->conectar()==true)
+	    {
+	 	    $sql="DELETE FROM clientes WHERE id='".$id."'";
 	 		return $select=mysql_query($sql);
 	 	}
 	 }

@@ -2,6 +2,11 @@
 	border-top: 0px; 
 	
 }
+
+#firma{
+	background-color: #fff;
+	border-color:#fff;
+}
 .modal-header{
 	text-align: center;
 }

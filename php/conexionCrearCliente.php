@@ -31,17 +31,17 @@
 				}else{*/
 					$crear->altaCliente($usuario,$apellidos,$edad,$habitacion,$email,$pais,$idioma,$hotel,$fecha,$agencia,$tratamiento,$terapeuta,$circunstancia,$opinion);
 					echo '<script language="javascript">alert("Usario Registrado Correctamente");</script>';
-					echo "<script>location.href='recepcionista.php'</script>";	
+					echo "<script>location.href='clientes.php'</script>";	
 				//}
 				// alerta
 		}
 		else{
 			echo '<script language="javascript">alert("Los Campos Estan Vacios, Por Favor Vuleva  intentar");</script>';
-			echo "<script>location.href='recepcionista.php'</script>";
+			echo "<script>location.href='clientes.php'</script>";
 		}
 		// alerta
 	}else{
 		echo '<script language="javascript">alert("Faltaron Algunos Campos Por Rellenar");</script>';
-		echo "<script>location.href='recepcionista.php'</script>";
+		echo "<script>location.href='clientes.php'</script>";
 	}
 ?>
